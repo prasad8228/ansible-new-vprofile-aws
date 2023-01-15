@@ -119,8 +119,7 @@
       register: PubRT_out
 
 
-
-    - name: Create a new nat gateway and allocate new EIP if a nat gateway does not exists
+    - name: Create a new nat gateway and allocate new EIP if a nat gateway does not exists in the subnet
       ec2_vpc_nat_gateway:
          state: "{{state}}"
          subnet_id: "{{pubsub1_out.subnet.id}}"
@@ -128,7 +127,6 @@
          region: "{{ region }}"
          if_exist_do_not_create: true
       register: NatGW_out
-
 
 
     - name: Setup private subnet route table
