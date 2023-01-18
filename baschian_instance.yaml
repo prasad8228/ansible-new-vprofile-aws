@@ -1,0 +1,21 @@
+---
+
+- name: Setup Vprofile Bastian Host
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Import VPC Setup variable
+      include_vars: vars/bastian_Setup
+
+    - name: Import VPC Setup variable
+      include_vars: vars/output_vars
+
+
+
+
+
+
+
+
+
